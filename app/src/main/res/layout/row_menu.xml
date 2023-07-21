@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="menuRowModel" type="com.application.app.modules.menu.data.model.MenuRowModel"/>
+    </data>
+    <LinearLayout android:id="@+id/linearRowcomputer"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal" style="@style/groupStylelight_blue_900cornerRadius">
+        <ImageView android:id="@+id/imageComputer"
+            android:layout_height="@dimen/_18pxh"
+            android:layout_marginBottom="@dimen/_30pxv"
+            android:layout_marginStart="@dimen/_28pxh"
+            android:layout_marginTop="@dimen/_31pxv"
+            android:layout_width="@dimen/_18pxh"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_computer"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_computer"/>
+        <View android:background="@color/white_A700"
+            android:id="@+id/lineLineFour"
+            android:layout_height="@dimen/_80pxv"
+            android:layout_marginStart="@dimen/_29pxh"
+            android:layout_weight="0.0" android:layout_width="0dp"/>
+        <TextView android:ellipsize="end" android:id="@+id/txtSeven"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_28pxv"
+            android:layout_marginEnd="@dimen/_41pxh"
+            android:layout_marginStart="@dimen/_32pxh"
+            android:layout_marginTop="@dimen/_31pxv"
+            android:layout_weight="0.86" android:layout_width="0dp"
+            android:lineSpacingExtra="@dimen/_4pxh"
+            android:singleLine="true"
+            android:text="@{menuRowModel.txtSeven}"
+            style="@style/txtProximaNovaregular16" tools:text="@string/lbl13"/>
+    </LinearLayout>
+</layout>

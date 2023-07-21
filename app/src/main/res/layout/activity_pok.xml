@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="pokVM" type="com.application.app.modules.pok.data.viewmodel.PokVM"/>
+    </data>
+    <FrameLayout android:id="@+id/frameP0kupka"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" style="@style/groupStylewhite_A700">
+        <ImageView android:id="@+id/imagePattern"
+            android:layout_gravity="start"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_pattern"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_pattern"/>
+        <LinearLayout android:id="@+id/linearColumnsearch"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_40pxv"
+            android:layout_marginEnd="@dimen/_27pxh"
+            android:layout_marginStart="@dimen/_28pxh"
+            android:layout_marginTop="@dimen/_40pxv"
+            android:layout_width="match_parent" android:orientation="vertical">
+            <ImageView android:id="@+id/imageSearch"
+                android:layout_height="@dimen/_24pxh"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:layout_width="@dimen/_24pxh"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_search"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_search"/>
+            <LinearLayout android:id="@+id/linearColumntwo"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_17pxv"
+                android:layout_width="match_parent" android:orientation="vertical">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtTwo"
+                    android:layout_gravity="start"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_32pxh"
+                    android:layout_marginStart="@dimen/_32pxh"
+                    android:layout_width="wrap_content"
+                    android:letterSpacing="0.08"
+                    android:lineSpacingExtra="@dimen/_7pxh"
+                    android:singleLine="true"
+                    android:text="@{pokVM.pokModel.txtTwo}"
+                    style="@style/txtProximaNovaregular32_1" tools:text="@string/lbl8"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:gravity="center_horizontal"
+                    android:id="@+id/recyclerListone"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_20pxh"
+                    android:layout_marginStart="@dimen/_20pxh"
+                    android:layout_marginTop="@dimen/_36pxv"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    itemSpace="@{@dimen/_12pxh}" tools:itemCount="3" tools:listitem="@layout/row_listone"/>
+                <LinearLayout android:gravity="start"
+                    android:id="@+id/linearSumm"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_303pxv"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal" style="@style/groupStylecornerRadius_3">
+                    <LinearLayout android:id="@+id/linearRowfour"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20pxh"
+                        android:layout_weight="0.55"
+                        android:layout_width="0dp" android:orientation="horizontal">
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtFour"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_20pxv"
+                            android:layout_marginTop="@dimen/_20pxv"
+                            android:layout_weight="0.99"
+                            android:layout_width="0dp"
+                            android:lineSpacingExtra="@dimen/_3pxh"
+                            android:singleLine="true"
+                            android:text="@{pokVM.pokModel.txtFour}"
+                            style="@style/txtProximaNovaregular12" tools:text="@string/lbl10"/>
+                        <View android:background="@color/white_A700"
+                            android:id="@+id/lineLineFour"
+                            android:layout_height="@dimen/_56pxv"
+                            android:layout_marginStart="@dimen/_20pxh"
+                            android:layout_weight="0.01" android:layout_width="0dp"/>
+                    </LinearLayout>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtThreeHundredSeventyFive"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_19pxv"
+                        android:layout_marginEnd="@dimen/_92pxh"
+                        android:layout_marginStart="@dimen/_90pxh"
+                        android:layout_marginTop="@dimen/_21pxv"
+                        android:layout_weight="0.45"
+                        android:layout_width="0dp"
+                        android:lineSpacingExtra="@dimen/_3pxh"
+                        android:singleLine="true"
+                        android:text="@{pokVM.pokModel.txtThreeHundredSeventyFive}"
+                        style="@style/txtProximaNovaregular12" tools:text="@string/lbl_375"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/linearRowplusThree"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12pxv"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+                    <LinearLayout android:id="@+id/linearAdd"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:orientation="horizontal" style="@style/groupStylelight_blue_900cornerRadius">
+                        <ImageView android:id="@+id/imagePlusThree"
+                            android:layout_height="@dimen/_20pxh"
+                            android:layout_marginBottom="@dimen/_18pxv"
+                            android:layout_marginStart="@dimen/_14pxh"
+                            android:layout_marginTop="@dimen/_18pxv"
+                            android:layout_width="@dimen/_20pxh"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_plus"
+                            tools:ignore="ContentDescription" tools:src="@drawable/img_plus"/>
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtFive"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_19pxv"
+                            android:layout_marginEnd="@dimen/_4pxh"
+                            android:layout_marginStart="@dimen/_18pxh"
+                            android:layout_marginTop="@dimen/_21pxv"
+                            android:layout_weight="0.81"
+                            android:layout_width="0dp"
+                            android:lineSpacingExtra="@dimen/_3pxh"
+                            android:singleLine="true"
+                            android:text="@{pokVM.pokModel.txtFive}"
+                            style="@style/txtProximaNovaregular12" tools:text="@string/lbl11"/>
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/linearOplata"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_17pxh"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:orientation="horizontal" style="@style/groupStylelight_blue_900cornerRadius">
+                        <ImageView android:id="@+id/imageTrash"
+                            android:layout_height="@dimen/_16pxh"
+                            android:layout_marginBottom="@dimen/_20pxv"
+                            android:layout_marginStart="@dimen/_14pxh"
+                            android:layout_marginTop="@dimen/_20pxv"
+                            android:layout_width="@dimen/_20pxh"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_trash"
+                            tools:ignore="ContentDescription" tools:src="@drawable/img_trash"/>
+                        <View android:background="@color/white_A700"
+                            android:id="@+id/lineLineFourOne"
+                            android:layout_height="@dimen/_56pxv"
+                            android:layout_marginStart="@dimen/_14pxh"
+                            android:layout_weight="0.01" android:layout_width="0dp"/>
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtSix"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_20pxv"
+                            android:layout_marginEnd="@dimen/_22pxh"
+                            android:layout_marginStart="@dimen/_21pxh"
+                            android:layout_marginTop="@dimen/_20pxv"
+                            android:layout_weight="0.72"
+                            android:layout_width="0dp"
+                            android:lineSpacingExtra="@dimen/_3pxh"
+                            android:singleLine="true"
+                            android:text="@{pokVM.pokModel.txtSix}"
+                            style="@style/txtProximaNovaregular12" tools:text="@string/lbl12"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</layout>

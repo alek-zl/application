@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="startScreenVM" type="com.application.app.modules.startscreen.data.viewmodel.StartScreenVM"/>
+    </data>
+    <FrameLayout android:id="@+id/frameStack"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" style="@style/groupStylewhite_A700">
+        <ImageView android:id="@+id/imageImageThree"
+            android:layout_gravity="start"
+            android:layout_height="@dimen/_788pxv"
+            android:layout_marginBottom="@dimen/_10pxv"
+            android:layout_width="match_parent"
+            android:scaleType="fitXY" imageRes="@{@drawable/img_image3}"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_image3"/>
+        <FrameLayout android:id="@+id/frameStackpattern"
+            android:layout_gravity="bottom|start"
+            android:layout_height="@dimen/_328pxv"
+            android:layout_marginTop="@dimen/_10pxv"
+            android:layout_width="match_parent" style="@style/groupStylewhite_A700_ddcornerRadius">
+            <ImageView android:id="@+id/imagePattern"
+                android:layout_gravity="start"
+                android:layout_height="@dimen/_328pxh"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_pattern_teal_100"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_pattern_teal_100"/>
+
+            <LinearLayout
+                android:id="@+id/linearColumnexceptionalurb"
+                android:layout_width="match_parent"
+                android:layout_height="265dp"
+                android:layout_gravity="top|center"
+                android:layout_marginStart="@dimen/_49pxh"
+                android:layout_marginTop="@dimen/_41pxv"
+                android:layout_marginEnd="@dimen/_49pxh"
+                android:layout_marginBottom="@dimen/_41pxv"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtExceptionalUrb"
+                    style="@style/txtProximaNovaregular28"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_24pxh"
+                    android:layout_marginEnd="@dimen/_24pxh"
+                    android:ellipsize="end"
+                    android:gravity="center_horizontal"
+                    android:letterSpacing="0.02"
+                    android:lineSpacingExtra="@dimen/_7pxh"
+                    android:singleLine="true"
+                    android:text="@{startScreenVM.startScreenModel.txtExceptionalUrb}"
+                    tools:text="@string/lbl_forceful2" />
+
+                <TextView
+                    android:id="@+id/txtShopforexcept"
+                    style="@style/txtProximaNovaregular16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_22pxv"
+                    android:gravity="center_horizontal"
+                    android:lineSpacingExtra="@dimen/_2pxh"
+                    android:text="@{startScreenVM.startScreenModel.txtShopforexcept}"
+                    tools:text="@string/msg" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn"
+                    style="@style/btnSolidRounded"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_24pxh"
+                    android:layout_marginTop="@dimen/_67pxv"
+                    android:layout_marginEnd="@dimen/_24pxh"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lineSpacingExtra="@dimen/_4pxh"
+                    android:paddingStart="@dimen/_30pxh"
+                    android:paddingTop="@dimen/_13pxv"
+                    android:paddingEnd="@dimen/_30pxh"
+                    android:paddingBottom="@dimen/_13pxv"
+                    android:singleLine="true"
+                    android:text="@string/lbl"
+                    android:textAllCaps="false"
+                    tools:text="@string/lbl" />
+            </LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+</layout>

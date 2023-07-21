@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="listoneRowModel" type="com.application.app.modules.pok.data.model.ListoneRowModel"/>
+    </data>
+    <LinearLayout android:id="@+id/linearBanana"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal" style="@style/groupStylecornerRadius">
+        <TextView android:ellipsize="end" android:id="@+id/txtOne"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_13pxv"
+            android:layout_marginStart="@dimen/_39pxh"
+            android:layout_marginTop="@dimen/_14pxv"
+            android:layout_weight="0.61" android:layout_width="0dp"
+            android:lineSpacingExtra="@dimen/_4pxh"
+            android:singleLine="true"
+            android:text="@{listoneRowModel.txtOne}"
+            style="@style/txtProximaNovaregular16_2" tools:text="@string/lbl_1"/>
+        <View android:background="@color/white_A700"
+            android:id="@+id/lineLineSix"
+            android:layout_height="@dimen/_48pxv"
+            android:layout_marginStart="@dimen/_39pxh"
+            android:layout_weight="0.0" android:layout_width="0dp"/>
+        <ImageView android:id="@+id/imagePlay"
+            android:layout_height="@dimen/_10pxh"
+            android:layout_marginBottom="@dimen/_19pxv"
+            android:layout_marginStart="@dimen/_4pxh"
+            android:layout_marginTop="@dimen/_19pxv"
+            android:layout_width="@dimen/_10pxh"
+            android:scaleType="fitXY" android:src="@drawable/img_play"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_play"/>
+        <TextView android:ellipsize="end" android:id="@+id/txtOneOne"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_14pxv"
+            android:layout_marginStart="@dimen/_5pxh"
+            android:layout_marginTop="@dimen/_13pxv"
+            android:layout_weight="0.04" android:layout_width="0dp"
+            android:lineSpacingExtra="@dimen/_4pxh"
+            android:singleLine="true"
+            android:text="@{listoneRowModel.txtOneOne}"
+            style="@style/txtProximaNovaregular16_2" tools:text="@string/lbl_12"/>
+        <ImageView android:id="@+id/imagePlus"
+            android:layout_height="@dimen/_10pxh"
+            android:layout_marginBottom="@dimen/_19pxv"
+            android:layout_marginStart="@dimen/_5pxh"
+            android:layout_marginTop="@dimen/_19pxv"
+            android:layout_width="@dimen/_10pxh"
+            android:scaleType="fitXY" android:src="@drawable/img_plus"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_plus"/>
+        <View android:background="@color/white_A700"
+            android:id="@+id/lineLineFive"
+            android:layout_height="@dimen/_48pxv"
+            android:layout_marginStart="@dimen/_7pxh"
+            android:layout_weight="0.0" android:layout_width="0dp"/>
+        <TextView android:ellipsize="end"
+            android:id="@+id/txtNinetyNine"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_16pxv"
+            android:layout_marginEnd="@dimen/_8pxh"
+            android:layout_marginStart="@dimen/_8pxh"
+            android:layout_marginTop="@dimen/_18pxv"
+            android:layout_weight="0.21" android:layout_width="0dp"
+            android:lineSpacingExtra="@dimen/_3pxh"
+            android:singleLine="true"
+            android:text="@{listoneRowModel.txtNinetyNine}"
+            style="@style/txtProximaNovaregular10" tools:text="@string/lbl_99"/>
+    </LinearLayout>
+</layout>
