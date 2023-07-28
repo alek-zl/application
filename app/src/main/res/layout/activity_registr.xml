@@ -53,6 +53,17 @@
                 android:singleLine="true"
                 android:text="@{registrVM.registrModel.txtLetsgetyour}"
                 style="@style/txtInterregular20" tools:text="@string/msg3"/>
+            <TextView android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:id="@+id/errorMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:textSize="17sp"
+                android:text="Был введен некорректный номер, попробуйте снова"
+                android:textColor="#b31b27"
+                android:visibility="invisible"
+                />
             <EditText android:ellipsize="end"
                 android:hint="@string/lbl2" android:id="@+id/etField"
                 android:inputType="phone"
@@ -71,7 +82,7 @@
                 style="@style/etProximaNovaregular16" tools:ignore="Autofill"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:ellipsize="end" android:gravity="center"
-                android:id="@+id/btn"
+                android:id="@+id/btnCheckPhoneNumber"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_33pxh"
                 android:layout_marginStart="@dimen/_38pxh"
