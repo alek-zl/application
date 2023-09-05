@@ -18,6 +18,7 @@ import com.application.app.R
 import com.application.app.appcomponents.base.BaseActivity
 import com.application.app.databinding.ActivityRegistrBinding
 import com.application.app.modules.code.ui.CodeActivity
+import com.application.app.modules.nb.ui.NbActivity
 import com.application.app.modules.registr.`data`.viewmodel.RegistrVM
 import kotlin.String
 import kotlin.Unit
@@ -65,7 +66,7 @@ class RegistrActivity : BaseActivity<ActivityRegistrBinding>(R.layout.activity_r
                         context = this)
                     sendNotification(builder = builder, context = this)
 
-                    val intent = Intent(this, CodeActivity::class.java)
+                    val intent = Intent(this, NbActivity::class.java)
                     startActivity(intent)
                 }
                 else
