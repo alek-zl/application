@@ -20,6 +20,9 @@ import com.application.app.databinding.ActivityRegistrBinding
 import com.application.app.modules.code.ui.CodeActivity
 import com.application.app.modules.nb.ui.NbActivity
 import com.application.app.modules.registr.`data`.viewmodel.RegistrVM
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlin.String
 import kotlin.Unit
 
@@ -54,26 +57,33 @@ class RegistrActivity : BaseActivity<ActivityRegistrBinding>(R.layout.activity_r
     private fun setupButtons()
     {
         binding.btnCheckPhoneNumber.setOnClickListener {
-            val answer = viewModel.checkPhoneNumber(binding.etField.text.toString())
-            if(answer) {
-                if(binding.errorMessage.isVisible)
-                    binding.errorMessage.isVisible = false
-                val userLoginResponseInfo = viewModel.getAnswerFromApi()
-                if(userLoginResponseInfo.isUserInBD) {
-                    setupNotificationMessage(
-                        title = "Verification code",
-                        message = "Your verification code: ${userLoginResponseInfo.verificationCode}",
-                        context = this)
-                    sendNotification(builder = builder, context = this)
+            CoroutineScope(Dispatchers.Main).launch {
+                val answer = viewModel.checkPhoneNumber(binding.etField.text.toString())
+                if (answer) {
+                    if (binding.errorMessage.isVisible)
+                        binding.errorMessage.isVisible = false
+                    val userLoginResponseInfo = viewModel.getAnswerFromApi(phoneNumber = binding.etField.text.toString())
+                    if (userLoginResponseInfo.codeAnswer == 200) {
+                        setupNotificationMessage(
+                            title = "Verification code",
+                            message = "Your verification code: ${userLoginResponseInfo.verificationCode}",
+                            context = applicationContext
+                        )
+                        sendNotification(builder = builder, context = applicationContext)
 
-                    val intent = Intent(this, NbActivity::class.java)
-                    startActivity(intent)
-                }
-                else
+                        val intent = Intent(applicationContext, NbActivity::class.java)
+                        startActivity(intent)
+                    } else
+                        showErrorMessage()
+                } else {
                     showErrorMessage()
+                }
             }
-            else {
-                showErrorMessage()
+        }
+
+        binding.etField.setOnFocusChangeListener { _, hasFocus ->
+            if(hasFocus && binding.etField.text.toString() == "") {
+                binding.etField.setText("+79")
             }
         }
     }
