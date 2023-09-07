@@ -20,6 +20,40 @@ class CodeActivity : BaseActivity<ActivityCodeBinding>(R.layout.activity_code) {
     binding.imageSearch.setOnClickListener {
       finish()
     }
+
+    binding.buttonCheck.setOnClickListener {
+      val code = getCodeFromEditTexts()
+
+      if (code == "verificationCode" && viewModel.codeModel.isUserInBD) {
+        fillData()
+      } else if (code == "verificationCode" && !viewModel.codeModel.isUserInBD) {
+        // Переходим к NbActivity
+        startActivity(Intent(this, NbActivity::class.java))
+        finish()
+      } else {
+        clearEditTexts()
+      }
+    }
+  }z
+
+  private fun getCodeFromEditTexts(): String {
+    val editTextNumberOne = binding.editTextNumberOne.text.toString()
+    val editTextNumberTwo = binding.editTextNumberTwo.text.toString()
+    val editTextNumberThree = binding.editTextNumberThree.text.toString()
+    val editTextNumberFour = binding.editTextNumberFour.text.toString()
+
+    return "$editTextNumberOne$editTextNumberTwo$editTextNumberThree$editTextNumberFour"
+  }
+
+  private fun clearEditTexts() {
+    binding.editTextNumberOne.text.clear()
+    binding.editTextNumberTwo.text.clear()
+    binding.editTextNumberThree.text.clear()
+    binding.editTextNumberFour.text.clear()
+  }
+
+  private fun fillData() {
+    viewModel.loadDataFromServer()
   }
 
   companion object {
@@ -27,3 +61,4 @@ class CodeActivity : BaseActivity<ActivityCodeBinding>(R.layout.activity_code) {
 
   }
 }
+
