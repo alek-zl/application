@@ -61,7 +61,7 @@ class NbActivity : BaseActivity<ActivityNbBinding>(R.layout.activity_nb) {
                 )
 
                 val userInfo = NbApiModel(
-                    phone = "Some number", //TODO: Improve, get information from prev page
+                    phone = intent.getStringExtra("phoneNumber").toString(),
                     dateOfBirth = dateOfBirth,
                     gender = gender,
                     name = binding.etField.text.toString()

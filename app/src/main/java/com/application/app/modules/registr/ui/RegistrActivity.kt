@@ -72,6 +72,7 @@ class RegistrActivity : BaseActivity<ActivityRegistrBinding>(R.layout.activity_r
                         sendNotification(builder = builder, context = applicationContext)
 
                         val intent = Intent(applicationContext, NbActivity::class.java)
+                        intent.putExtra("phoneNumber", binding.etField.text.toString())
                         startActivity(intent)
                     } else
                         showErrorMessage()
