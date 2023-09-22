@@ -45,15 +45,18 @@ class NbVM : ViewModel(), KoinComponent {
 
      fun getDateOfBirth(day: Int, month: Int, year: Int): String {
         var answer: String = ""
-        answer += if(day < 10)
-            "0$day."
-        else
-            day.toString()
+
+         answer += if(day < 10)
+             "0$day."
+         else
+             "$day."
 
         answer += if(month < 10)
             "0$month."
         else
-            month.toString()
+            "$month."
+
+
 
         answer += year.toString()
         return answer

@@ -52,11 +52,11 @@ class NbActivity : BaseActivity<ActivityNbBinding>(R.layout.activity_nb) {
             CoroutineScope(Dispatchers.Main).launch {
                 val gender: String =
                     if(binding.genderSpinner1.id == 0) //TODO:
-                        "Male"
-                    else "Female"
+                        "мужской"
+                    else "женский"
                 val dateOfBirth = viewModel.getDateOfBirth(
                     day = binding.datePicker.dayOfMonth,
-                    month = binding.datePicker.dayOfMonth,
+                    month = binding.datePicker.month,
                     year = binding.datePicker.year
                 )
 
@@ -68,8 +68,8 @@ class NbActivity : BaseActivity<ActivityNbBinding>(R.layout.activity_nb) {
                 )
                 val responseAnswer = viewModel.regUser(userInfo)
                 if(responseAnswer.answer == 200) {
-                    val intent = Intent(applicationContext, MenuActivity::class.java)
-                    startActivity(intent)
+//                    val intent = Intent(applicationContext, MenuActivity::class.java)
+//                    startActivity(intent) //TODO: Go to the next activity
                 }
                 else {
                     binding.etField.setText("")
